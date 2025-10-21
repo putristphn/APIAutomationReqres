@@ -86,7 +86,7 @@ All tests include assertions for:
 - Response body fields
 - Data validation consistency
 - Empty body verification (DELETE)
-- API Key Authentication → (x-api-key: reqres-free-v1)
+- API Key Authentication → (`x-api-key`: `reqres-free-v1`)
 
 --- 
 
@@ -101,7 +101,7 @@ Here’s an example of the Mochawesome HTML report generated after running all t
 ## 🧠 Key Learnings
 
 - Writing structured API test suites with Mocha
-- Using Chai’s BDD assertions (expect) for readability
+- Using Chai’s BDD assertions (`expect`) for readability
 - Implementing API key authentication
 - Handling async/await test execution
 - Generating HTML reports for visual test summaries
