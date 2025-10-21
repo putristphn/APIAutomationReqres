@@ -98,10 +98,21 @@ Here’s an example of the Mochawesome HTML report generated after running all t
 
 --- 
 
+## 🧠 Key Learnings
+
+- Writing structured API test suites with Mocha
+- Using Chai’s BDD assertions (expect) for readability
+- Implementing API key authentication
+- Handling async/await test execution
+- Generating HTML reports for visual test summaries
+
 ## 👩‍💻 Author
 
 Putri Stephanie Lesilolo
+
 Quality Assurance Engineer | Digital Skola Batch 12
+
 📍 Jakarta, Indonesia
+
 🔗 https://www.linkedin.com/in/putrilesilolo/ | https://github.com/putristphn
 
