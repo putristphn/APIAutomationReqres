@@ -6,7 +6,7 @@ Developed as part of the **Digital Skola QA Bootcamp Batch 12** by **Putri Steph
 ---
 
 ## 📂 Project Structure
-
+```
 APIAutomationReqres/
 ├── tests/
 │ ├── getListUser.test.js
@@ -18,6 +18,7 @@ APIAutomationReqres/
 │ └── sample-report-screenshot.png
 ├── package.json
 └── README.md
+```
 
 ---
 
@@ -71,20 +72,21 @@ npm run test:unit -- tests/deleteUser.test.js
 
    ---
   
- ## 📁 Test Endpoints
+ ## 📁 Test Coverage
 
-| Method | Endpoint        | Description          | Expected Status |
-| ------ | --------------- | -------------------- | --------------- |
-| GET    | `/api/users/2`  | Retrieve single user | 200             |
-| POST   | `/api/register` | Register user        | 200             |
-| PATCH  | `/api/users/2`  | Update user data     | 200             |
-| DELETE | `/api/users/2`  | Delete user          | 204             |
+| Method | Endpoint        | Description          | Expected Status | Notes                         |
+| ------ | --------------- | -------------------- | --------------- | ----------------------------- |
+| GET    | `/api/users/2`  | Retrieve single user | 200             | Validates user data presence  |
+| POST   | `/api/register` | Register user        | 200             | Validates `id` & `token`      |
+| PATCH  | `/api/users/2`  | Update user info     | 200             | Validates `job` & `updatedAt` |
+| DELETE | `/api/users/2`  | Delete user          | 204             | Validates empty response body |
 
 All tests include assertions for:
 - Response status code
-- Response body validation
-- Empty body check (DELETE)
-- API key authentication (x-api-key: reqres-free-v1)
+- Response body fields
+- Data validation consistency
+- Empty body verification (DELETE)
+- API Key Authentication → (x-api-key: reqres-free-v1)
 
 --- 
 
@@ -99,10 +101,7 @@ Here’s an example of the Mochawesome HTML report generated after running all t
 ## 👩‍💻 Author
 
 Putri Stephanie Lesilolo
-
 Quality Assurance Engineer | Digital Skola Batch 12
-
 📍 Jakarta, Indonesia
-
- https://www.linkedin.com/in/putrilesilolo/ | https://github.com/putristphn
+🔗 https://www.linkedin.com/in/putrilesilolo/ | https://github.com/putristphn
 
