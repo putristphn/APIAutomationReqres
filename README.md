@@ -2,6 +2,11 @@
 
 This project demonstrates API automation testing using **Mocha**, **Chai**, and **Mochawesome** on the [ReqRes public API](https://reqres.in/).  
 Developed as part of the **Digital Skola QA Bootcamp Batch 12** by **Putri Stephanie Lesilolo**.
+[![Postman](https://img.shields.io/badge/API_Tested_with-Postman-orange?logo=postman)](./postman/Putristphn-Batch12.postman_collection.json)
+[![Mocha](https://img.shields.io/badge/Test_Framework-Mocha-yellow?logo=mocha)](https://mochajs.org/)
+[![Chai](https://img.shields.io/badge/Assertions-Chai-red?logo=chai)](https://www.chaijs.com/)
+[![Report-Mochawesome](https://img.shields.io/badge/Report-Mochawesome-blue?logo=html5)](./reports/api-report.html)
+[![Digital Skola](https://img.shields.io/badge/Digital_Skola-Batch_12-green?logo=google-classroom)](https://digit)
 
 ---
 
@@ -16,6 +21,8 @@ APIAutomationReqres/
 ├── reports/
 │ └── api-report.html
 │ └── sample-report-screenshot.png
+├── postman/
+│   └── Putristphn-Batch12.postman_collection.json
 ├── package.json
 └── README.md
 ```
@@ -31,6 +38,9 @@ APIAutomationReqres/
 | **Mochawesome** | HTML test reporting for Mocha |
 | **AJV** | JSON schema validation |
 | **Node-fetch** | Used to make HTTP requests |
+| **Postman** | Used for API design, manual testing, and collection export |
+
+--- 
 
 ## ⚙️ Installation & Setup
 
@@ -59,6 +69,7 @@ npm run test:all
 ```
 npm run test:unit -- tests/deleteUser.test.js
 ```
+💡 Default timeout is set to 10 seconds, ensuring stability for API responses.
 
   ---
 
@@ -80,6 +91,27 @@ npm run test:unit -- tests/deleteUser.test.js
 | POST   | `/api/register` | Register user        | 200             | Validates `id` & `token`      |
 | PATCH  | `/api/users/2`  | Update user info     | 200             | Validates `job` & `updatedAt` |
 | DELETE | `/api/users/2`  | Delete user          | 204             | Validates empty response body |
+
+---
+
+## 🧰 Postman Collection
+
+This repository also includes the original **Postman Collection** used to design and test the API endpoints before automation.
+
+📁 **Location:**  
+[`/postman/Putristphn-Batch12.postman_collection.json`](./postman/Putristphn-Batch12.postman_collection.json)
+
+You can import it directly into Postman by:
+1. Opening **Postman**
+2. Clicking **Import**
+3. Selecting the file from the `/postman/` directory
+
+The collection includes:
+- Sample requests for **GET**, **POST**, **PATCH**, and **DELETE**
+- Example headers and body payloads
+- API key setup for ReqRes (`x-api-key: reqres-free-v1`)
+
+---
 
 All tests include assertions for:
 - Response status code
