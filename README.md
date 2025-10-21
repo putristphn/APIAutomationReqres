@@ -2,11 +2,6 @@
 
 This project demonstrates API automation testing using **Mocha**, **Chai**, and **Mochawesome** on the [ReqRes public API](https://reqres.in/).  
 Developed as part of the **Digital Skola QA Bootcamp Batch 12** by **Putri Stephanie Lesilolo**.
-[![Postman](https://img.shields.io/badge/API_Tested_with-Postman-orange?logo=postman)](./postman/Putristphn-Batch12.postman_collection.json)
-[![Mocha](https://img.shields.io/badge/Test_Framework-Mocha-yellow?logo=mocha)](https://mochajs.org/)
-[![Chai](https://img.shields.io/badge/Assertions-Chai-red?logo=chai)](https://www.chaijs.com/)
-[![Report-Mochawesome](https://img.shields.io/badge/Report-Mochawesome-blue?logo=html5)](./reports/api-report.html)
-[![Digital Skola](https://img.shields.io/badge/Digital_Skola-Batch_12-green?logo=google-classroom)](https://digit)
 
 ---
 
