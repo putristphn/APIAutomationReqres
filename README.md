@@ -106,6 +106,8 @@ Here’s an example of the Mochawesome HTML report generated after running all t
 - Handling async/await test execution
 - Generating HTML reports for visual test summaries
 
+---
+
 ## 👩🏻‍💻 Author
 
 **Putri Stephanie Lesilolo**  
