@@ -2,14 +2,14 @@
   "stats": {
     "suites": 4,
     "tests": 4,
-    "passes": 1,
+    "passes": 4,
     "pending": 0,
-    "failures": 3,
-    "start": "2025-10-21T06:49:08.126Z",
-    "end": "2025-10-21T06:49:08.896Z",
-    "duration": 770,
+    "failures": 0,
+    "start": "2025-10-21T07:38:52.881Z",
+    "end": "2025-10-21T07:38:53.701Z",
+    "duration": 820,
     "testsRegistered": 4,
-    "passPercent": 25,
+    "passPercent": 100,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "3f59db88-0d93-4e92-b433-02ecb3a9230c",
+      "uuid": "5565e421-c8d5-4c75-8c11-4ec0f63221b3",
       "title": "",
       "fullFile": "",
       "file": "",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "998bd1f5-2611-45c2-b4c8-b6ee159b09d2",
+          "uuid": "b890d61f-4114-4868-b361-b25ca2563230",
           "title": "DELETE - Delete user",
           "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/deleteUser.test.js",
           "file": "/tests/deleteUser.test.js",
@@ -35,85 +35,38 @@
           "afterHooks": [],
           "tests": [
             {
-              "title": "should delete user successfully and return status 204",
-              "fullTitle": "DELETE - Delete user should delete user successfully and return status 204",
+              "title": "should return 204 with empty body",
+              "fullTitle": "DELETE - Delete user should return 204 with empty body",
               "timedOut": false,
-              "duration": 303,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 343,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"DELETE\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n  },\n  cache: \"no-store\"\n});\nexpect(response.status).to.equal(204);\nconst text = await response.text();\nexpect(text).to.equal(\"\");\nconsole.log(\"DELETE response body:\", text || \"<empty>\");",
-              "err": {
-                "message": "AssertionError: expected 401 to equal 204",
-                "estack": "AssertionError: expected 401 to equal 204\n    at Context.<anonymous> (tests/deleteUser.test.js:15:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
-                "diff": "- 401\n+ 204\n"
-              },
-              "uuid": "b1016030-4da5-410b-baf4-5c10e20026db",
-              "parentUUID": "998bd1f5-2611-45c2-b4c8-b6ee159b09d2",
+              "code": "const res = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"DELETE\",\n  headers: {\n    \"Accept\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  }\n});\nconst text = await res.text();     // 204 => empty string\nexpect(res.status).to.equal(204);\nexpect(text).to.equal(\"\");",
+              "err": {},
+              "uuid": "1ef52b6a-a688-4522-9528-1dbfd191f18f",
+              "parentUUID": "b890d61f-4114-4868-b361-b25ca2563230",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "b1016030-4da5-410b-baf4-5c10e20026db"
+          "passes": [
+            "1ef52b6a-a688-4522-9528-1dbfd191f18f"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 303,
+          "duration": 343,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 10000
         },
         {
-          "uuid": "db04763f-8d72-4d0a-be5d-18548b9029e4",
-          "title": "PATCH - Update user",
-          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/patchUser.test.js",
-          "file": "/tests/patchUser.test.js",
-          "beforeHooks": [],
-          "afterHooks": [],
-          "tests": [
-            {
-              "title": "should update user job successfully",
-              "fullTitle": "PATCH - Update user should update user job successfully",
-              "timedOut": false,
-              "duration": 213,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
-              "pending": false,
-              "context": null,
-              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"PATCH\",\n  headers: {\n    \"Content-Type\": \"application/json\"\n  },\n  body: JSON.stringify({\n    name: \"morpheus\",\n    job: \"zion resident\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data.name).to.equal(\"morpheus\");\nexpect(data.job).to.equal(\"zion resident\");\nexpect(data).to.have.property(\"updatedAt\");",
-              "err": {
-                "message": "AssertionError: expected 401 to equal 200",
-                "estack": "AssertionError: expected 401 to equal 200\n    at Context.<anonymous> (tests/patchUser.test.js:19:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
-                "diff": "- 401\n+ 200\n"
-              },
-              "uuid": "34f18c88-06de-4325-8f58-fa74f54db3a1",
-              "parentUUID": "db04763f-8d72-4d0a-be5d-18548b9029e4",
-              "isHook": false,
-              "skipped": false
-            }
-          ],
-          "suites": [],
-          "passes": [],
-          "failures": [
-            "34f18c88-06de-4325-8f58-fa74f54db3a1"
-          ],
-          "pending": [],
-          "skipped": [],
-          "duration": 213,
-          "root": false,
-          "rootEmpty": false,
-          "_timeout": 2000
-        },
-        {
-          "uuid": "27200087-22ab-4dfc-94ae-e8d8d8992f2a",
+          "uuid": "b5eabfe7-a381-48c0-90d1-967f677f2c77",
           "title": "POST - Register user",
           "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/registerUser.test.js",
           "file": "/tests/registerUser.test.js",
@@ -124,39 +77,35 @@
               "title": "should register a user successfully and return id & token",
               "fullTitle": "POST - Register user should register a user successfully and return id & token",
               "timedOut": false,
-              "duration": 207,
-              "state": "failed",
-              "speed": null,
-              "pass": false,
-              "fail": true,
+              "duration": 222,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
               "pending": false,
               "context": null,
-              "code": "const response = await fetch(\"https://reqres.in/api/register\", {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\"\n  },\n  body: JSON.stringify({\n    email: \"eve.holt@reqres.in\",\n    password: \"pistol\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data).to.have.property(\"id\");\nexpect(data).to.have.property(\"token\");",
-              "err": {
-                "message": "AssertionError: expected 401 to equal 200",
-                "estack": "AssertionError: expected 401 to equal 200\n    at Context.<anonymous> (tests/registerUser.test.js:19:32)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
-                "diff": "- 401\n+ 200\n"
-              },
-              "uuid": "9354dffb-c073-491c-b9e3-f44136a66918",
-              "parentUUID": "27200087-22ab-4dfc-94ae-e8d8d8992f2a",
+              "code": "const response = await fetch(\"https://reqres.in/api/register\", {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  },\n  body: JSON.stringify({\n    email: \"eve.holt@reqres.in\",\n    password: \"pistol\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data).to.have.property(\"id\");\nexpect(data).to.have.property(\"token\");",
+              "err": {},
+              "uuid": "5545cf69-9e1e-4b09-b32a-ffc4c0fe9e32",
+              "parentUUID": "b5eabfe7-a381-48c0-90d1-967f677f2c77",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
-          "passes": [],
-          "failures": [
-            "9354dffb-c073-491c-b9e3-f44136a66918"
+          "passes": [
+            "5545cf69-9e1e-4b09-b32a-ffc4c0fe9e32"
           ],
+          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 207,
+          "duration": 222,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 10000
         },
         {
-          "uuid": "a190a720-7b8d-4611-9812-59daf0722675",
+          "uuid": "4480fa2d-30a5-4bef-9bf6-85d577fa5370",
           "title": "GET - Retrieve user",
           "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/retrieveUser.test.js",
           "file": "/tests/retrieveUser.test.js",
@@ -167,32 +116,71 @@
               "title": "should return user data with status 200",
               "fullTitle": "GET - Retrieve user should return user data with status 200",
               "timedOut": false,
-              "duration": 41,
+              "duration": 36,
               "state": "passed",
-              "speed": "medium",
+              "speed": "fast",
               "pass": true,
               "fail": false,
               "pending": false,
               "context": null,
               "code": "const response = await fetch(\"https://reqres.in/api/users/2\");\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data.data).to.have.property(\"id\");\nexpect(data.data).to.have.property(\"email\");",
               "err": {},
-              "uuid": "b06f44b5-5bd0-42ea-b975-03ca35a6ba78",
-              "parentUUID": "a190a720-7b8d-4611-9812-59daf0722675",
+              "uuid": "c45da54b-6330-469c-87ef-aad2af2f478b",
+              "parentUUID": "4480fa2d-30a5-4bef-9bf6-85d577fa5370",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "b06f44b5-5bd0-42ea-b975-03ca35a6ba78"
+            "c45da54b-6330-469c-87ef-aad2af2f478b"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 41,
+          "duration": 36,
           "root": false,
           "rootEmpty": false,
-          "_timeout": 2000
+          "_timeout": 10000
+        },
+        {
+          "uuid": "0a7cd2a7-4e59-447a-8473-d9563fdb8808",
+          "title": "PATCH - Update user",
+          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/updateUser.test.js",
+          "file": "/tests/updateUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update user job successfully",
+              "fullTitle": "PATCH - Update user should update user job successfully",
+              "timedOut": false,
+              "duration": 213,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"PATCH\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  },\n  body: JSON.stringify({\n    name: \"morpheus\",\n    job: \"zion resident\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data.name).to.equal(\"morpheus\");\nexpect(data.job).to.equal(\"zion resident\");\nexpect(data).to.have.property(\"updatedAt\");",
+              "err": {},
+              "uuid": "6ff519ad-0ccc-4c3d-ad47-e4ea0f1d660f",
+              "parentUUID": "0a7cd2a7-4e59-447a-8473-d9563fdb8808",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6ff519ad-0ccc-4c3d-ad47-e4ea0f1d660f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 213,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
         }
       ],
       "passes": [],
@@ -202,7 +190,7 @@
       "duration": 0,
       "root": true,
       "rootEmpty": true,
-      "_timeout": 2000
+      "_timeout": 10000
     }
   ],
   "meta": {

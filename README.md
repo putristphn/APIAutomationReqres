@@ -15,6 +15,7 @@ APIAutomationReqres/
 │ └── deleteUser.test.js
 ├── reports/
 │ └── api-report.html
+│ └── sample-report-screenshot.png
 ├── package.json
 └── README.md
 
@@ -89,15 +90,19 @@ All tests include assertions for:
 
 ## 📸 Example Test Report (Mochawesome)
 
-Example screenshot of the generated HTML report:
+Here’s an example of the Mochawesome HTML report generated after running all tests:
+
+![API Test Report Example](./reports/sample-report-screenshot.png)
 
 --- 
 
-### 👩‍💻 Author
+## 👩‍💻 Author
 
 Putri Stephanie Lesilolo
+
 Quality Assurance Engineer | Digital Skola Batch 12
+
 📍 Jakarta, Indonesia
-🔗 LinkedIn
+
  https://www.linkedin.com/in/putrilesilolo/ | https://github.com/putristphn
 
