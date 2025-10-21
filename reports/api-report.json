@@ -1,0 +1,220 @@
+{
+  "stats": {
+    "suites": 4,
+    "tests": 4,
+    "passes": 4,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-10-21T07:23:33.617Z",
+    "end": "2025-10-21T07:23:40.615Z",
+    "duration": 6998,
+    "testsRegistered": 4,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "535690d6-1e14-44f4-a79e-5871b8abb56c",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2dbadcdb-fc64-4f51-8f7d-a20deff7df03",
+          "title": "DELETE - Delete user",
+          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/deleteUser.test.js",
+          "file": "/tests/deleteUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return 204 with empty body",
+              "fullTitle": "DELETE - Delete user should return 204 with empty body",
+              "timedOut": false,
+              "duration": 6546,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const res = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"DELETE\",\n  headers: {\n    \"Accept\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  }\n});\nconst text = await res.text();     // 204 => empty string\nexpect(res.status).to.equal(204);\nexpect(text).to.equal(\"\");",
+              "err": {},
+              "uuid": "2e1e80bc-4343-4c34-99ae-dbb597c71a18",
+              "parentUUID": "2dbadcdb-fc64-4f51-8f7d-a20deff7df03",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2e1e80bc-4343-4c34-99ae-dbb597c71a18"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 6546,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "b6c2c6f7-d84d-4481-a5b9-37485e4a7050",
+          "title": "POST - Register user",
+          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/registerUser.test.js",
+          "file": "/tests/registerUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should register a user successfully and return id & token",
+              "fullTitle": "POST - Register user should register a user successfully and return id & token",
+              "timedOut": false,
+              "duration": 211,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/register\", {\n  method: \"POST\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  },\n  body: JSON.stringify({\n    email: \"eve.holt@reqres.in\",\n    password: \"pistol\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data).to.have.property(\"id\");\nexpect(data).to.have.property(\"token\");",
+              "err": {},
+              "uuid": "cff2f76e-b0be-42a7-a5df-748e11dc85a4",
+              "parentUUID": "b6c2c6f7-d84d-4481-a5b9-37485e4a7050",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "cff2f76e-b0be-42a7-a5df-748e11dc85a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 211,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "5634f617-1cb9-4836-88b7-57bd23a68312",
+          "title": "GET - Retrieve user",
+          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/retrieveUser.test.js",
+          "file": "/tests/retrieveUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should return user data with status 200",
+              "fullTitle": "GET - Retrieve user should return user data with status 200",
+              "timedOut": false,
+              "duration": 35,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users/2\");\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data.data).to.have.property(\"id\");\nexpect(data.data).to.have.property(\"email\");",
+              "err": {},
+              "uuid": "a42c0a91-58af-4b6e-a958-e2e79685eb82",
+              "parentUUID": "5634f617-1cb9-4836-88b7-57bd23a68312",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "a42c0a91-58af-4b6e-a958-e2e79685eb82"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 35,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        },
+        {
+          "uuid": "c4121028-8242-4695-a33c-fb2e2d7f0a7f",
+          "title": "PATCH - Update user",
+          "fullFile": "/Users/putristphn/Documents/qa-engineer/digital-skola/APIAutomationReqres/tests/updateUser.test.js",
+          "file": "/tests/updateUser.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should update user job successfully",
+              "fullTitle": "PATCH - Update user should update user job successfully",
+              "timedOut": false,
+              "duration": 202,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await fetch(\"https://reqres.in/api/users/2\", {\n  method: \"PATCH\",\n  headers: {\n    \"Content-Type\": \"application/json\",\n    \"x-api-key\": \"reqres-free-v1\"\n  },\n  body: JSON.stringify({\n    name: \"morpheus\",\n    job: \"zion resident\"\n  })\n});\nconst data = await response.json();\nexpect(response.status).to.equal(200);\nexpect(data.name).to.equal(\"morpheus\");\nexpect(data.job).to.equal(\"zion resident\");\nexpect(data).to.have.property(\"updatedAt\");",
+              "err": {},
+              "uuid": "f7cc6dcb-227b-4ec3-8f10-ef8a752b5fd7",
+              "parentUUID": "c4121028-8242-4695-a33c-fb2e2d7f0a7f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f7cc6dcb-227b-4ec3-8f10-ef8a752b5fd7"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 202,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 10000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 10000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "11.7.4"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "api-report",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.4"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "reports",
+        "reportFilename": "api-report"
+      },
+      "version": "6.3.0"
+    }
+  }
+}

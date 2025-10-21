@@ -1,0 +1,38 @@
+{
+  "name": "apiautomationreqres",
+  "version": "1.0.0",
+  "description": "API Automation Testing project using Mocha, Chai, and Mochawesome for ReqRes public API (Digital Skola QA Bootcamp - Batch 12)",
+  "main": "index.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "mocha tests --reporter mochawesome --timeout 10000",
+    "test:all": "mocha \"tests/**/*.js\" --reporter mochawesome --timeout 10000 --reporter-options reportDir=reports,reportFilename=api-report",
+    "test:unit": "mocha --timeout 10000",
+    "report": "marge reports/*.json --reportDir reports --reportFilename api-report"
+  },
+  "keywords": [
+    "mocha",
+    "chai",
+    "api",
+    "automation",
+    "reqres",
+    "mochawesome",
+    "digital-skola",
+    "qa",
+    "testing"
+  ],
+  "author": "Putri Stephanie Lesilolo",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.12.2",
+    "chai": "^6.2.0",
+    "mocha": "^11.7.4",
+    "mochawesome": "^7.1.4",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.3.0",
+    "node-fetch": "^3.3.2"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1"
+  }
+}
