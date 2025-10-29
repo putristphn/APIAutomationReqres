@@ -1,7 +1,7 @@
 # 🧪 API Automation Testing – ReqRes.in
 
 This project demonstrates API automation testing using **Mocha**, **Chai**, and **Mochawesome** on the [ReqRes public API](https://reqres.in/).  
-Developed as part of the **Digital Skola QA Bootcamp Batch 12** by **Putri Stephanie Lesilolo**.
+Developed as part of the **Digital Skola QA Bootcamp Batch 12 - Session 6 (API Testing) & Session 7 (API Automation)** by **Putri Stephanie Lesilolo**.
 
 ---
 
@@ -122,6 +122,8 @@ All tests include assertions for:
 Here’s an example of the Mochawesome HTML report generated after running all tests:
 
 ![API Test Report Example](./reports/sample-report-screenshot.png)
+
+The report includes detailed logs, assertions, and pass/fail status for each test case.
 
 --- 
 
